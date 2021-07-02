@@ -27,6 +27,11 @@ public class Simplesabers implements ModInitializer {
 
 	//Lightsabers
 	public static ToolItem RED_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 4, -3F, new Item.Settings().group(Simplesabers.simple_sabers));
+	public static ToolItem BLUE_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 4, -2.5F, new Item.Settings().group(Simplesabers.simple_sabers));
+	public static ToolItem GREEN_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 0, -1.5F, new Item.Settings().group(Simplesabers.simple_sabers));
+	public static ToolItem PURPLE_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 6, -3.5F, new Item.Settings().group(Simplesabers.simple_sabers));
+	public static ToolItem YELLOW_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 2, -2F, new Item.Settings().group(Simplesabers.simple_sabers));
+	public static ToolItem WHITE_LIGHTSABER = new SwordItem(LightsaberMaterial.INSTANCE, 0, -1F, new Item.Settings().group(Simplesabers.simple_sabers));
 
 
 
@@ -41,5 +46,10 @@ public class Simplesabers implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "kyber_crystal_white"), KYBER_CRYSTAL_WHITE);
 
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "red_lightsaber"), RED_LIGHTSABER);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "blue_lightsaber"), BLUE_LIGHTSABER);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "green_lightsaber"), GREEN_LIGHTSABER);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "purple_lightsaber"), PURPLE_LIGHTSABER);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "yellow_lightsaber"), YELLOW_LIGHTSABER);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "white_lightsaber"), WHITE_LIGHTSABER);
 	}
 }
