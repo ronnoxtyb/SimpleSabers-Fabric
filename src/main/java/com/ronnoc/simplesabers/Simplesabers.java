@@ -4,6 +4,9 @@ import com.ronnoc.simplesabers.stuffs.LightsaberMaterial;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -35,6 +38,8 @@ public class Simplesabers implements ModInitializer {
 
 
 
+	//Blocks
+	public static final Block BLUE_CRYSTAL_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).luminance(3));
 
 	@Override
 	public void onInitialize() {
@@ -51,5 +56,10 @@ public class Simplesabers implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "purple_lightsaber"), PURPLE_LIGHTSABER);
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "yellow_lightsaber"), YELLOW_LIGHTSABER);
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "white_lightsaber"), WHITE_LIGHTSABER);
+
+		Registry.register(Registry.BLOCK, new Identifier("simplesabers", "blue_crystal_block"), BLUE_CRYSTAL_BLOCK);
+
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "blue_crystal_block"),
+				new BlockItem(BLUE_CRYSTAL_BLOCK, new FabricItemSettings().group(Simplesabers.simple_sabers)));
 	}
 }
