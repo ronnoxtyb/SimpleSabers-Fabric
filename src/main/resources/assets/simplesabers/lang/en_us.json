@@ -20,9 +20,9 @@
   "item.simplesabers.saber_lower_part": "Bottom Saber Part",
   "item.simplesabers.focus_crystal": "Focusing Crystal",
 
-  "block.simplesabers.blue_crystal_ore": "Blue Kyber Crystal Ore",
-  "block.simplesabers.red_crystal_ore": "Red Kyber Crystal Ore",
-  "block.simplesabers.green_crystal_ore": "Green Kyber Crystal Ore",
+  "block.simplesabers.blue_ore": "Blue Kyber Crystal Ore",
+  "block.simplesabers.red_ore": "Red Kyber Crystal Ore",
+  "block.simplesabers.green_ore": "Green Kyber Crystal Ore",
   "block.simplesabers.purple_crystal_ore": "Purple Kyber Crystal Ore",
   "block.simplesabers.yellow_crystal_ore": "Yellow Kyber Crystal Ore",
   "block.simplesabers.white_crystal_ore": "White Kyber Crystal Ore",

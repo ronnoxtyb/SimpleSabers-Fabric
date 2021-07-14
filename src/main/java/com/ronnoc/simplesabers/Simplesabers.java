@@ -2,21 +2,22 @@ package com.ronnoc.simplesabers;
 
 import com.ronnoc.simplesabers.stuffs.LightsaberMaterial;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+import com.ronnoc.simplesabers.stuffs.Blocks;
 
-public class Simplesabers implements ModInitializer {
+public class Simplesabers implements ModInitializer{
 
 	public static final ItemGroup simple_sabers = FabricItemGroupBuilder.build(
 			new Identifier("simplesabers", "simplesabers"),
 			() -> new ItemStack(Simplesabers.KYBER_CRYSTAL_RED));
+
 
 
 	//Crystals
@@ -39,7 +40,7 @@ public class Simplesabers implements ModInitializer {
 
 
 	//Blocks
-	public static final Block BLUE_CRYSTAL_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).luminance(3));
+
 
 	@Override
 	public void onInitialize() {
@@ -55,11 +56,41 @@ public class Simplesabers implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "green_lightsaber"), GREEN_LIGHTSABER);
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "purple_lightsaber"), PURPLE_LIGHTSABER);
 		Registry.register(Registry.ITEM, new Identifier("simplesabers", "yellow_lightsaber"), YELLOW_LIGHTSABER);
-		Registry.register(Registry.ITEM, new Identifier("simplesabers", "white_lightsaber"), WHITE_LIGHTSABER);
 
-		Registry.register(Registry.BLOCK, new Identifier("simplesabers", "blue_crystal_block"), BLUE_CRYSTAL_BLOCK);
 
-		Registry.register(Registry.ITEM, new Identifier("simplesabers", "blue_crystal_block"),
-				new BlockItem(BLUE_CRYSTAL_BLOCK, new FabricItemSettings().group(Simplesabers.simple_sabers)));
+
+
+		BlockRenderLayerMap.INSTANCE.putBlock(Blocks.RED_ORE, RenderLayer.getCutout());
+		Registry.register(Registry.BLOCK, new Identifier("simplesabers", "red_ore"), Blocks.RED_ORE);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "red_ore"),
+				new BlockItem(Blocks.RED_ORE, new FabricItemSettings().group(simple_sabers)));
+
+		BlockRenderLayerMap.INSTANCE.putBlock(Blocks.BLUE_ORE, RenderLayer.getCutout());
+		Registry.register(Registry.BLOCK, new Identifier("simplesabers", "blue_ore"), Blocks.BLUE_ORE);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "blue_ore"),
+				new BlockItem(Blocks.BLUE_ORE, new FabricItemSettings().group(simple_sabers)));
+
+		BlockRenderLayerMap.INSTANCE.putBlock(Blocks.GREEN_ORE, RenderLayer.getCutout());
+		Registry.register(Registry.BLOCK, new Identifier("simplesabers", "green_ore"), Blocks.GREEN_ORE);
+		Registry.register(Registry.ITEM, new Identifier("simplesabers", "green_ore"),
+				new BlockItem(Blocks.GREEN_ORE, new FabricItemSettings().group(simple_sabers)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 }
